@@ -7,7 +7,7 @@ namespace blackJack {
             Turn MyTurn = new Turn ();
             bool GameOn = true;
             int rounds = 0;
-            while (GameOn = true) {
+            while (GameOn == true) {
                 // Deal each player up card
                 foreach (Player player in MyTable.PlayerList) {
                     player.Draw (MyTable.deckName);
