@@ -3,7 +3,7 @@ using System.Collections.Generic;
 namespace blackJack{
     public class Player
     {
-        string name;
+        public string name;
         public List<Card> hand;
         public bool isDealer;
         public double wins;
@@ -19,15 +19,16 @@ namespace blackJack{
         // function that runs the dealer logic. return the dealers score or - for a bust
         public int dealerRound(Table table)
         {
-            // did the player bust?
-            Turn.checkTotal(table[1])
-            //is you a dealer??
-            if (isDealer == true)
+            // did the player bust? is you a dealer??
+            int busted = Turn.checkTotal(table[1]);
+            if (busted < 0 && isDealer == true)
             {
+
                 // this is the score that will be messed with and utimately be returned
                 int score;
                 // return the score. should be either between 16-21 or a bust (-1)
                 return score;
+            }
             }    
         }
         public void Draw(Deck gameDeck)
