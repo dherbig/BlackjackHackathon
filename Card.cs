@@ -1,4 +1,4 @@
-namespace ConsoleApplication{
+namespace blackJack{
     public class Card
     {
         private string stringVal;
@@ -11,9 +11,9 @@ namespace ConsoleApplication{
             string[] sV = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
             stringVal = sV[num];
         }
-        public string Is()
+        public override string ToString()
         {
-            return stringVal + " of " + suit;
+            return stringVal+" of " suit;
         }
     }
 }
