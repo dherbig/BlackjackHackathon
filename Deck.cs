@@ -37,7 +37,7 @@ namespace blackJack{
             string[] suitArray = {"Clubs", "Hearts", "Diamonds", "Spades"};
             foreach(string suit in suitArray)
             {
-                for (int i = 0; i < 14; i++)
+                for (int i = 0; i < 13; i++)
                 {
                     Card newCard = new Card(suit, i);
                     contents.Add(newCard);
