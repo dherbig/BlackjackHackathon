@@ -11,7 +11,7 @@ namespace blackJack {
                 return true
             } else return false;
         }
-        public int checkTotal (Player player) {
+        public static int checkTotal (Player player) {
             int sum = 0;
             foreach (Card card in player.hand) {
                 sum += card.realVal;

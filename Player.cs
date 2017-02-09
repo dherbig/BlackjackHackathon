@@ -6,6 +6,7 @@ namespace blackJack{
         string name;
         public List<Card> hand;
         public bool isDealer;
+        public double wins;
         public Player(string n){
             // do the other end of the hand creation. Set hand to be a list of strings
             hand = new List<Card>();
@@ -13,15 +14,19 @@ namespace blackJack{
             name = n;
             //set isDealer to false by default
             isDealer = false;
+            wins = 0.0;
         }
         // function that runs the dealer logic. return the dealers score or - for a bust
-        public int dealerRound()
+        public int dealerRound(Table table)
         {
-            //dealer??
+            // did the player bust?
+            Turn.checkTotal(table[1])
+            //is you a dealer??
             if (isDealer == true)
             {
+                // this is the score that will be messed with and utimately be returned
                 int score;
-
+                // return the score. should be either between 16-21 or a bust (-1)
                 return score;
             }    
         }
