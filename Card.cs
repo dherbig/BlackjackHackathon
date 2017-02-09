@@ -28,17 +28,17 @@
             // Aces are worth 11
             if (val == 1)
             {
-                RealVal = 11;
+                realVal = 11;
             }
             // Cards larger than 10 are valued at 10
             else if (val > 10)
             {
-                RealVal = 10;
+                realVal = 10;
             }
             // Everything else is at face value.
             else
             {
-                RealVal = val;
+                realVal = val;
             }
         }
         // Referencing cards as strings will display them in "Ace of Spades" format.
