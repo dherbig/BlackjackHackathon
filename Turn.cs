@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 
-namespace blackJack {
+namespace blackJack 
+{
     public class Turn {
         public bool checkBlackJack (Player player) {
             int sum = 0;
@@ -8,7 +9,7 @@ namespace blackJack {
                 sum += card.realVal;
             }
             if (sum == 21) {
-                return true
+                return true;
             } else return false;
         }
         public static int checkTotal (Player player) {
@@ -21,8 +22,8 @@ namespace blackJack {
                 if (sum > 21) {
                     return -1;
                 }
-                return sum;
             }
+                return sum;
         }
         public string checkWinner (Table table) {
             int dealer = checkTotal (table.PlayerList [0]);
@@ -34,22 +35,23 @@ namespace blackJack {
                 if (player.isDealer = true) {
                     continue;
                 } else {
-                    int player = checkTotal (player);
-                    if (player > 21) {
+                    int playerHand = checkTotal (player);
+                    if (playerHand > 21) {
                         results += player.name + " Busts!.\n";
                     }
-                    if (player > dealer) {
+                    if (playerHand > dealer) {
                         results += player.name + " beats the dealer.\n";
                         player.wins++;
-                    } else if (dealer > player) {
-                        results += player.name + " loses to the dealer.\n"
+                    } else if (dealer > playerHand) {
+                        results += player.name + " loses to the dealer.\n";
                         else {
-                            results += player.name + " and the dealer PUSH.\n"
-                            wins += 0.5
+                            results += player.name + " and the dealer PUSH.\n";
+                            player.wins += 0.5;
                         }
                     }
                 }
             }
+                return results;
         }
     }
 }

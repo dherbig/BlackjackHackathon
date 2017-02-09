@@ -1,4 +1,5 @@
- namespace blackJack{
+ namespace blackJack
+ {
     public class Card
     {
         // This stores the value (Ace - King) as a string.
