@@ -4,7 +4,7 @@ namespace blackJack
 {
     public class Player
     {
-        string name;
+        public string name;
         public List<Card> hand;
         public bool isDealer;
         public double wins;
