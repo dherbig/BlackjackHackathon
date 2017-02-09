@@ -26,7 +26,7 @@ namespace blackJack {
             return sum;
         }
         public string checkWinner (Table table) {
-            int dealer = checkTotal (table.PlayerList [0]);
+            int dealer = checkTotal (table.PlayerList[0]);
             if (dealer < 0) {
                 return "Dealer Busts";
             }
@@ -48,6 +48,7 @@ namespace blackJack {
                         else {
                             results += player.name + " and the dealer PUSH.\n";
                             player.wins += 0.5;
+
                     }
                 }
             }
@@ -58,31 +59,26 @@ namespace blackJack {
             while (output != "Hit" && output != "Stand")
                 System.Console.WriteLine ("Do you wish to Hit or Stand?");
             output = System.Console.ReadLine ();
-        return output;
+            return output;
         }
-        
+
         // This function displays the cards that each player has visible on the table.
-        public void showTable(Table table)
-        {
+        public void showTable (Table table) {
             // Each player, in order...
-            foreach(Player player in table.PlayerList)
-            {
+            foreach (Player player in table.PlayerList) {
                 // Display the name of the player
-                Console.WriteLine(player.name + " has:");
+                Console.WriteLine (player.name + " has:");
                 // Creates a response which we'll log to the console after it's been assembled.
                 String ans = "";
                 // For every card except for the last,
-                for(int i = 0; i < player.hand.Count-1; i++)
-                {
+                for (int i = 0; i < player.hand.Count - 1; i++) {
                     // if the card is face up,
-                    if(player.hand[i].faceDown == false)
-                    {
+                    if (player.hand[i].faceDown == false) {
                         // add that card to the string.
                         ans += "the " + player.hand[i];
                     }
                     // Otherwise...
-                    else
-                    {
+                    else {
                         // keep it mysterious.
                         ans += "a face down mystery card";
                     }
@@ -91,29 +87,24 @@ namespace blackJack {
                 }
                 // Last value won't need the comma
                 ans += "and ";
-                if(player.hand[player.hand.count-1].faceDown == false)
-                {
-                    ans += "the " + player.hand[player.hand.count-1];
-                }
-                else
-                {
+                if (player.hand[player.hand.Count - 1].faceDown == false) {
+                    ans += "the " + player.hand[player.hand.Count - 1];
+                } else {
                     ans += "a face down mystery card";
                 }
                 // Finish the sentence with a period.
                 ans += ".";
-                ans = char.ToUpper(ans[0]) + ans.Substring(1);
+                ans = char.ToUpper (ans[0]) + ans.Substring (1);
                 // Write the answer to the console.
-                Console.WriteLine(ans);
+                Console.WriteLine (ans);
             }
         }
         // This flips face down cards face up.
-        public void showHand(Player player)
-        {
+        public void showHand (Player player) {
             // Shows a message to let us know that we are flipping the cards.
-            Console.WriteLine("Let's see what " + player.name + " has, shall we?");
+            Console.WriteLine ("Let's see what " + player.name + " has, shall we?");
             // For every card in the passed player's hand...
-            foreach(Card card in player.hand)
-            {
+            foreach (Card card in player.hand) {
                 // ...change faceDown to false
                 card.faceDown = false;
             }
