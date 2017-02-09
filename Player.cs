@@ -47,7 +47,6 @@ namespace blackJack
                 return;
             }
             }    
-        }
         public void Draw(Deck gameDeck)
         {
             hand.Add(gameDeck.Deal());
