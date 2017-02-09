@@ -18,17 +18,36 @@ namespace blackJack
             wins = 0.0;
         }
         // function that runs the dealer logic. return the dealers score or - for a bust
-        public int dealerRound(Table table, Turn MyTurn)
+        public void dealerRound(Table table, Turn MyTurn)
         {
+            Player dealer = MyTable.PlayerList [0];
+            int inGame = 0;
             // did the player bust? && is you a dealer??
-            int busted = MyTurn.checkTotal(table.PlayerList[1]);
-            if (busted > 0 && isDealer == true)
+            foreach (Player player in MyTable.PlayerList) {
+                    // skip dealer.
+                    if (player == dealer) {
+                        continue;
+                    }
+            int busted = MyTurn.checkTotal(player);
+            if (busted > 0) 
+            {
+                inGame++;
+            }
+            }
+
+            if (inGame > 0)
             {
                 // this is the score that will be messed with and utimately be returned
-                int score;
-
-                // return the score. should be either between 16-21 or a bust (-1)
-                return score;
+                int score = MyTurn.checkTotal(dealer);
+                if (score < 16)
+                {
+                    dealer.Draw(MyTable.deckName)
+                }
+                else if (score >= 22)
+                {
+                    //bust
+                }
+                
             }
             }    
         }
