@@ -1,7 +1,8 @@
 using System;
 using System.Collections.Generic;
 
-namespace blackJack{
+namespace blackJack
+{
 
  public class Deck
     {
