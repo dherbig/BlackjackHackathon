@@ -20,10 +20,10 @@ namespace blackJack
         // function that runs the dealer logic. return the dealers score or - for a bust
         public void dealerRound(Table table, Turn MyTurn)
         {
-            Player dealer = MyTable.PlayerList [0];
+            Player dealer = table.PlayerList[0];
             int inGame = 0;
             // did the player bust? && is you a dealer??
-            foreach (Player player in MyTable.PlayerList) {
+            foreach (Player player in table.PlayerList) {
                     // skip dealer.
                     if (player == dealer) {
                         continue;
@@ -37,17 +37,14 @@ namespace blackJack
 
             if (inGame > 0)
             {
-                // this is the score that will be messed with and utimately be returned
+                // this is the score that will be messed with
                 int score = MyTurn.checkTotal(dealer);
-                if (score < 16)
+                while (score < 16)
                 {
-                    dealer.Draw(MyTable.deckName)
+                    dealer.Draw(table.deckName);
+                    score = MyTurn.checkTotal(dealer);
                 }
-                else if (score >= 22)
-                {
-                    //bust
-                }
-                
+                return;
             }
             }    
         }
