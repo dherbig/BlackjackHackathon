@@ -9,9 +9,9 @@
         // This tracks the number of the card, from 1 (Ace) to 13 (King). This does not equal how many points the card is worth.
         private int val;
         // This tracks how much each card is worth for scoring purposes.  Aces = 11, and if the Ace RealVal needs to be 1, this is handled in the scoring logic.
-        public int RealVal;
+        public int realVal;
         //This tracks to see if the card was dealt face up or face down.  Defalts to false, for face UP.
-        public bool FaceDown = false;
+        public bool faceDown = false;
 
         public Card(string anzug, int num){
             // Takes a string that corresponds to the suit and assigns that value to suit. (Anzug is German for suit)
@@ -28,17 +28,17 @@
             // Aces are worth 11
             if (val == 1)
             {
-                RealVal = 11;
+                realVal = 11;
             }
             // Cards larger than 10 are valued at 10
             else if (val > 10)
             {
-                RealVal = 10;
+                realVal = 10;
             }
             // Everything else is at face value.
             else
             {
-                RealVal = val;
+                realVal = val;
             }
         }
         // Referencing cards as strings will display them in "Ace of Spades" format.
