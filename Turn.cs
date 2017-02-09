@@ -32,7 +32,7 @@ namespace blackJack {
             }
             string results = "";
             foreach (Player player in table.PlayerList) {
-                if (player.isDealer = true) {
+                if (player.isDealer == true) {
                     continue;
                 } else {
                     int playerHand = checkTotal (player);
@@ -72,7 +72,7 @@ namespace blackJack {
                 // Creates a response which we'll log to the console after it's been assembled.
                 String ans = "";
                 // For every card except for the last,
-                for(int i = 0; i < player.hand.Count()-1; i++)
+                for(int i = 0; i < player.hand.Count-1; i++)
                 {
                     // if the card is face up,
                     if(player.hand[i].faceDown == false)
