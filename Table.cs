@@ -8,6 +8,7 @@ namespace blackJack
     {
         // This list holds the Players in the game.
         public List<Player> PlayerList= new List<Player>();
+        public Deck deckName = new Deck();
 
         // Constructs a new table.
         public Table(int PlayerCount = 1)
