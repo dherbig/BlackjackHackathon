@@ -101,6 +101,7 @@ namespace blackJack {
                 }
                 // Finish the sentence with a period.
                 ans += ".";
+                ans = char.ToUpper(ans[0]) + ans.Substring(1);
                 // Write the answer to the console.
                 Console.WriteLine(ans);
             }
