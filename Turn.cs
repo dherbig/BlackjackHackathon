@@ -44,10 +44,10 @@ namespace blackJack {
                         player.wins++;
                     } else if (dealer > playerHand) {
                         results += player.name + " loses to the dealer.\n";
+                        }
                         else {
                             results += player.name + " and the dealer PUSH.\n";
                             player.wins += 0.5;
-                        }
                     }
                 }
             }
