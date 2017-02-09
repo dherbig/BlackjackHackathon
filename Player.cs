@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 
-namespace blackJack{
+namespace blackJack 
+{
     public class Player
     {
         string name;
