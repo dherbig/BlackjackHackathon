@@ -7,8 +7,8 @@
 -debug:portable
 -nostdlib
 -nologo
-"C:\Users\davis\Desktop\CodingDojo\C#\deckOfCards\obj\Debug\netcoreapp1.0\dotnet-compile.assemblyinfo.cs"
--out:"C:\Users\davis\Desktop\CodingDojo\C#\deckOfCards\bin\Debug\netcoreapp1.0\deckOfCards.dll"
+"c:\Users\davis\Desktop\CodingDojo\C#\BlackjackHackathon\obj\Debug\netcoreapp1.0\dotnet-compile.assemblyinfo.cs"
+-out:"c:\Users\davis\Desktop\CodingDojo\C#\BlackjackHackathon\bin\Debug\netcoreapp1.0\BlackjackHackathon.dll"
 -r:"C:\Users\davis\.nuget\packages\Microsoft.CSharp\4.0.1\ref\netstandard1.0\Microsoft.CSharp.dll"
 -r:"C:\Users\davis\.nuget\packages\Microsoft.VisualBasic\10.0.1\ref\netstandard1.1\Microsoft.VisualBasic.dll"
 -r:"C:\Users\davis\.nuget\packages\Microsoft.Win32.Primitives\4.0.1\ref\netstandard1.3\Microsoft.Win32.Primitives.dll"
@@ -82,7 +82,7 @@
 -r:"C:\Users\davis\.nuget\packages\System.Threading.Timer\4.0.1\ref\netstandard1.2\System.Threading.Timer.dll"
 -r:"C:\Users\davis\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll"
 -r:"C:\Users\davis\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll"
-"C:\Users\davis\Desktop\CodingDojo\C#\deckOfCards\Card.cs"
-"C:\Users\davis\Desktop\CodingDojo\C#\deckOfCards\Deck.cs"
-"C:\Users\davis\Desktop\CodingDojo\C#\deckOfCards\Player.cs"
-"C:\Users\davis\Desktop\CodingDojo\C#\deckOfCards\Program.cs"
+"c:\Users\davis\Desktop\CodingDojo\C#\BlackjackHackathon\Card.cs"
+"c:\Users\davis\Desktop\CodingDojo\C#\BlackjackHackathon\Deck.cs"
+"c:\Users\davis\Desktop\CodingDojo\C#\BlackjackHackathon\Player.cs"
+"c:\Users\davis\Desktop\CodingDojo\C#\BlackjackHackathon\Program.cs"
