@@ -1,8 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace blackJack 
-{
+namespace blackJack {
     public class Turn {
         public bool checkBlackJack (Player player) {
             int sum = 0;
@@ -24,7 +23,7 @@ namespace blackJack
                     return -1;
                 }
             }
-                return sum;
+            return sum;
         }
         public string checkWinner (Table table) {
             int dealer = checkTotal (table.PlayerList [0]);
@@ -52,7 +51,14 @@ namespace blackJack
                     }
                 }
             }
-                return results;
+            return results;
+        }
+        public string hitOrStand (Player player) {
+            string output = "";
+            while (output != "Hit" && output != "Stand")
+                System.Console.WriteLine ("Do you wish to Hit or Stand?");
+            output = System.Console.ReadLine ();
+        return output;
         }
         
         // This function displays the cards that each player has visible on the table.
