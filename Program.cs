@@ -11,12 +11,12 @@ namespace blackJack {
                 // Deal each player up card
                 foreach (Player player in MyTable.PlayerList) {
                     player.Draw (MyTable.deckName);
-                    player.hand [0].FaceDown = true;
+                    player.hand [0].faceDown = true;
                 }
                 // deal each player a face down card
                 foreach (Player player in MyTable.PlayerList) {
                     player.Draw (MyTable.deckName);
-                    player.hand [0].FaceDown = false;
+                    player.hand [0].faceDown = false;
                 }
                 // each player takes a turn
                 foreach (Player player in MyTable.PlayerList) {
