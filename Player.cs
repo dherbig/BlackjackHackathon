@@ -17,15 +17,15 @@ namespace blackJack{
             wins = 0.0;
         }
         // function that runs the dealer logic. return the dealers score or - for a bust
-        public int dealerRound(Table table)
+        public int dealerRound(Table table, Turn MyTurn)
         {
-            // did the player bust? is you a dealer??
-            int busted = Turn.checkTotal(table[1]);
-            if (busted < 0 && isDealer == true)
+            // did the player bust? && is you a dealer??
+            int busted = MyTurn.checkTotal(table.PlayerList[1]);
+            if (busted > 0 && isDealer == true)
             {
-
                 // this is the score that will be messed with and utimately be returned
                 int score;
+
                 // return the score. should be either between 16-21 or a bust (-1)
                 return score;
             }
