@@ -3,11 +3,11 @@
     public class Card
     {
         // This stores the value (Ace - King) as a string.
-        private string stringVal;
+        public string stringVal;
         // This tracks the suit of the card as a string.
-        private string suit;
+        public string suit;
         // This tracks the number of the card, from 1 (Ace) to 13 (King). This does not equal how many points the card is worth.
-        private int val;
+        public int val;
         // This tracks how much each card is worth for scoring purposes.  Aces = 11, and if the Ace RealVal needs to be 1, this is handled in the scoring logic.
         public int realVal;
         //This tracks to see if the card was dealt face up or face down.  Defalts to false, for face UP.
