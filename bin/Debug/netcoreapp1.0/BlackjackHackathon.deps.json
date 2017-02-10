@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v1.0": {
-      "BlackjackHackathon/1.0.0": {
+      "BlackjackHackathon/1.1.0": {
         "runtime": {
           "BlackjackHackathon.dll": {}
         }
@@ -14,7 +14,7 @@
     }
   },
   "libraries": {
-    "BlackjackHackathon/1.0.0": {
+    "BlackjackHackathon/1.1.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
