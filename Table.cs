@@ -26,7 +26,7 @@ namespace blackJack
             for (int i = 0; i < PlayerCount; i++)
             {
                 // Asks for that player's name
-                Console.WriteLine("Player {0}, what is your name?");
+                Console.WriteLine("Player {0}, what is your name?",i+1);
                 // Waits for user input
                 string InputLine = Console.ReadLine();
                 Player newPlayer = new Player(InputLine);

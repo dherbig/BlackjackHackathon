@@ -14,41 +14,57 @@ namespace blackJack {
         }
         public int checkTotal (Player player) {
             int sum = 0;
+            int aces = 0;
             foreach (Card card in player.hand) {
                 sum += card.realVal;
-                if (sum > 21 && card.val == 1) {
-                    sum -= 10;
+                if (card.val == 1) {
+                    aces = aces + 1;
+                }
+                if (sum > 21 && aces == 0) {
+                    return -1;
                 }
                 if (sum > 21) {
-                    return -1;
+                    sum = sum - 10;
+                    aces--;
                 }
             }
             return sum;
         }
         public string checkWinner (Table table) {
+            this.showTable(table);
             int dealer = checkTotal (table.PlayerList[0]);
             if (dealer < 0) {
+                foreach (Player player in table.PlayerList) {
+                    if (player.isDealer == true) {
+                        continue;
+                    } else {
+                        player.wins++;
+                    }
+                }
                 return "Dealer Busts";
+            } else {
+                System.Console.WriteLine ("Dealer has " + dealer.ToString ());
             }
             string results = "";
             foreach (Player player in table.PlayerList) {
                 if (player.isDealer == true) {
                     continue;
                 } else {
+
                     int playerHand = checkTotal (player);
-                    if (playerHand > 21) {
-                        results += player.name + " Busts!.\n";
-                    }
-                    if (playerHand > dealer) {
-                        results += player.name + " beats the dealer.\n";
-                        player.wins++;
-                    } else if (dealer > playerHand) {
-                        results += player.name + " loses to the dealer.\n";
-                        }
-                        else {
+                    if (playerHand == -1) {
+                        results += player.name + " Busts!\n";
+                    } else {
+                        System.Console.WriteLine ("Player has " + playerHand.ToString ());
+                        if (playerHand > dealer) {
+                            results += player.name + " beats the dealer.\n";
+                            player.wins = player.wins + 1;
+                        } else if (dealer > playerHand) {
+                            results += player.name + " loses to the dealer.\n";
+                        } else {
                             results += player.name + " and the dealer PUSH.\n";
                             player.wins += 0.5;
-
+                        }
                     }
                 }
             }
@@ -56,10 +72,12 @@ namespace blackJack {
         }
         public string hitOrStand (Player player) {
             string output = "";
-            while (output != "Hit" && output != "Stand")
+            while (output != "HIT" && output != "STAND") {
                 System.Console.WriteLine ("Do you wish to Hit or Stand?");
-            output = System.Console.ReadLine ();
+                output = System.Console.ReadLine ().ToUpper ();
+            }
             return output;
+
         }
 
         // This function displays the cards that each player has visible on the table.
@@ -107,6 +125,11 @@ namespace blackJack {
             foreach (Card card in player.hand) {
                 // ...change faceDown to false
                 card.faceDown = false;
+            }
+        }
+        public void resetHand (Table table) {
+            foreach (Player player in table.PlayerList) {
+                player.hand.Clear ();
             }
         }
     }
